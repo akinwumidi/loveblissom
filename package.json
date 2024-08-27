@@ -1,0 +1,19 @@
+{
+  "name": "chiade",
+  "version": "1.0.0",
+  "description": "Chidinma weds adekunle website",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akinwumidi/chiade.git"
+  },
+  "author": "Israel Akinwumi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/akinwumidi/chiade/issues"
+  },
+  "homepage": "https://github.com/akinwumidi/chiade#readme"
+}
