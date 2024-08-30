@@ -3,6 +3,7 @@
     margin:0;
     box-sizing:border-box;
 }
+
 :root{
     --main-color:#8e4585;
     --plum-color:#dda0dd;
@@ -11,6 +12,19 @@
     --white-color:#fff;
     --black-color:#000;
 --box-shadow: rgb(0 0 0 / 16%) 0px 2px 8px;
+}
+@keyframes ripple {
+  0% {
+    box-shadow: 0 0 0 0 var(--gold-color), 0 0 0 0 var(--gold-color);
+  }
+
+  80% {
+    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0), 0 0 0 20px rgba(0, 0, 0, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 20 var(--gold-color), 0 0 0 40 var(--gold-color);
+  }
 }
 body{
   font-family: "Montserrat", sans-serif;
@@ -86,6 +100,8 @@ ol li{
     position: fixed;
     top: 50px;
 right: 50px;
+/* transition: all 0.5s ease-in-out; */
+  animation: ripple 2s infinite;
 }
 
 .hamburger:hover .bars::before,
