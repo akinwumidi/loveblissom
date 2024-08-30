@@ -87,6 +87,7 @@ body{
     display: flex;
     flex-direction: column;
     /* border: 2px solid tomato; */
+    transform: translateY(22px);
 }
 .navigator-arrow span:nth-child(2){
     color: var(--gold-color);
@@ -97,7 +98,7 @@ body{
 }
 .navigator-text{
     display: block;
-    transform: rotate(-90deg) translateX(-120px);
+    transform: rotate(-90deg) translateX(-170px);
     text-wrap: nowrap;
     /* transform-origin: top left; */
     /* transform: translateY(-40px); */
@@ -249,7 +250,7 @@ ol li{
 /* Animated Hamburger menu ends here */
 
 
-@media (min-width:768px) {
+@media (min-width:1025px) {
     .desktop-program-container{
         display: block;
     }
