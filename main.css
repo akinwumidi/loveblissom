@@ -3,15 +3,161 @@
     margin:0;
     box-sizing:border-box;
 }
-body{
-    background: orangered;
-    color:white;
+:root{
+    --main-color:#8e4585;
+    --plum-color:#dda0dd;
+    --gold-color:#FFD700;
+    --gold-color2:#D4AF37;
+    --white-color:#fff;
+    --black-color:#000;
+--box-shadow: rgb(0 0 0 / 16%) 0px 2px 8px;
 }
-main{
-    height:100vh;
-    width:100vh;
+body{
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto; 
+  font-style: normal;
+    font-size: 16px;
+}
+
+.main-section{
     display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
+    height:100vh;
+    width:100%;
+}
+.desktop-program-container{
+    width: 385px;
+    min-width: 385px;
+    height: 100%;
+    min-height: 100%;
+    background: url("./images/wedding-program.png");
+    background-repeat: no-repeat; 
+    background-position: center;
+    background-size: cover;
+    display: none;
+}
+ 
+.image-container{
+        flex: 1;
+        height: 100%;
+        min-height: 100%;
+}
+.mobile-program-container{
+position: fixed; 
+top:100%;
+left: 0;
+width: 100%;
+height: 0%;
+z-index: 8;
+background: var(--gold-color);
+padding: 20px 38px;
+transition: all 0.3s ease;
+/* transition: all 0.4s 0.65s cubic-bezier(0, 0.88, 0.4, 0.93); */
+/* transition: opacity 0.43s 0.6s, height 0.4s 0.65s cubic-bezier(0, 0.88, 0.4, 0.93); */
+}
+.show-program{
+    top: 0;
+    height: 100%;
+    min-height: 100%;
+    opacity: 1;
+}
+.title{
+    color: var(--main-color);
+    font-weight: 700;
+    font-size: 1.6rem;
+}
+ol li{
+    line-height: 1.4;
+}
+
+/* Animated Hamburger menu starts here */
+
+.hamburger {
+    width: 3.43rem;
+    height: 3.43rem;
+    background: var(--gold-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    box-shadow: var(--box-shadow);
+    z-index: 10;
+    position: fixed;
+    top: 50px;
+right: 50px;
+}
+
+.hamburger:hover .bars::before,
+.hamburger:hover .bars::after {
+    transition: transform 0.3s ease;
+}
+
+.hamburger:hover .bars::before {
+    transform: translateY(-0.62rem);
+}
+
+.hamburger:hover .bars::after {
+    transform: translateY(0.62rem);
+}
+
+.bars {
+    background: var(--white-color);
+    height: 0.18rem;
+    width: 60%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    transition: transform 0.4s ease;
+
+}
+
+.bars::before {
+    content: '';
+    width: 80%;
+    height: 0.18rem;
+    background: var(--white-color);
+    position: absolute;
+    transform: translateY(-0.5rem);
+
+}
+
+.bars::after {
+    content: '';
+    width: 80%;
+    height: 0.18rem;
+    background: var(--white-color);
+    position: absolute;
+    transform: translateY(0.5rem);
+}
+
+.crossburger {
+    background: var(--black-color);
+}
+
+.crossburger .bars {
+    background: transparent;
+    transform: rotate(180deg);
+}
+
+.crossburger .bars::before {
+    transform: translateY(0px) rotate(45deg) !important;
+}
+
+.crossburger .bars::after {
+    transform: translateY(0px) rotate(-45deg) !important;
+
+}
+
+/* Animated Hamburger menu ends here */
+
+
+@media (min-width:768px) {
+    .desktop-program-container{
+        display: block;
+    }
+    .mobile-program-container{
+
+    width: 385px;
+}
 }
