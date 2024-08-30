@@ -13,6 +13,34 @@
     --black-color:#000;
 --box-shadow: rgb(0 0 0 / 16%) 0px 2px 8px;
 }
+@keyframes bounce1 {
+    0%, 100% {
+        transform: translateY(20px);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+}
+
+@keyframes bounce2 {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes bounce3 {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+
 @keyframes ripple {
   0% {
     box-shadow: 0 0 0 0 var(--gold-color), 0 0 0 0 var(--gold-color);
@@ -65,7 +93,7 @@ body{
 .program-navigator{
     position: fixed;
     top: 50px;
-    right: 0px;
+    right: 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -82,19 +110,28 @@ body{
     font-size: 35px;
     justify-content: space-between;
     gap: 0;
+    transition: all 0.3s ease;
 }
 .navigator-arrow{
     display: flex;
     flex-direction: column;
     /* border: 2px solid tomato; */
+    transition: all 0.3s ease;
     transform: translateY(22px);
+}
+
+.navigator-arrow span:nth-child(1){
+    transform: translateY(22px);
+    animation: bounce1 1.5s infinite;
 }
 .navigator-arrow span:nth-child(2){
     color: var(--gold-color);
+    animation: bounce2 1.5s infinite;
+    animation-delay: 0.1s;
 }
-.navigator-arrow span:nth-child(1){
-    /* color: var(--main-color); */
-    transform: translateY(22px);
+.navigator-arrow span:nth-child(3){
+    animation: bounce3 1.5s infinite;
+
 }
 .navigator-text{
     display: block;
@@ -104,6 +141,9 @@ body{
     /* transform: translateY(-40px); */
     font-size: 18px;
     font-weight: 700;
+}
+.navigator-text span{
+    color: var(--gold-color2);
 }
 .mobile-program-container{
 position: fixed; 
