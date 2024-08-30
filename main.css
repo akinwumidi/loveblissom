@@ -53,13 +53,56 @@ body{
 }
  
 .image-container{
-        /* flex: 1; */
-        width: 100%;
-        height: 100%;
-        min-height: 100vh;
-        min-height: 100%;
-        /* border: 1px solid black; */
-        overflow: hidden;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    min-height: 100%;
+    overflow: hidden;
+    /* border: 1px solid black; */
+    /* flex: 1; */
+}
+
+.program-navigator{
+    position: fixed;
+    top: 50px;
+    right: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10;
+    /* border: 2px solid red; */
+    height: 100%;
+    width: 80px;
+}
+.navigator-icon{
+    color: var(--white-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 35px;
+    justify-content: space-between;
+    gap: 0;
+}
+.navigator-arrow{
+    display: flex;
+    flex-direction: column;
+    /* border: 2px solid tomato; */
+}
+.navigator-arrow span:nth-child(2){
+    color: var(--gold-color);
+}
+.navigator-arrow span:nth-child(1){
+    /* color: var(--main-color); */
+    transform: translateY(22px);
+}
+.navigator-text{
+    display: block;
+    transform: rotate(-90deg) translateX(-120px);
+    text-wrap: nowrap;
+    /* transform-origin: top left; */
+    /* transform: translateY(-40px); */
+    font-size: 18px;
+    font-weight: 700;
 }
 .mobile-program-container{
 position: fixed; 
@@ -102,10 +145,7 @@ ol li{
     cursor: pointer;
     transition: all 0.4s ease;
     box-shadow: var(--box-shadow);
-    z-index: 10;
-    position: fixed;
-    top: 50px;
-right: 50px;
+    
 /* transition: all 0.5s ease-in-out; */
   animation: ripple 2s infinite;
 }
@@ -172,7 +212,20 @@ right: 50px;
 }
 
 /* Swiper implementation starts here */
+
+.custom-image-overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(142, 69, 133,0.45);
+    z-index: 4;
+}
 .swiper {
+    position: relative;
     /* border: 2px solid red; */
     width: 100%;
   height: 100%;
