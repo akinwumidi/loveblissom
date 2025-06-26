@@ -4,7 +4,17 @@
     box-sizing:border-box;
 }
 
+/* 
+Theme colors
+Emerald green: #50C878
+Chocolate: #7B3F00
+Custard yellow: #fff78
+
+*/
+
 :root{
+    --second-color:#50C878;
+    --second-color-dark:#50C878;
     --main-color:#8e4585;
     --plum-color:#dda0dd;
     --gold-color:#FFD700;
@@ -60,6 +70,84 @@ body{
   font-style: normal;
     font-size: 16px;
 }
+.btn{
+    padding: 8px 15px;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+    outline: none;
+    border-radius: 10px;
+}
+.btn-gold{
+    background: var(--gold-color2);
+    color: white;
+    font-size: 25px;
+    font-weight: 700;
+}
+.btn-gold:hover{
+background: transparent;
+border: 1px solid var(--gold-color2);
+}
+.btn-main{
+    background: var(--main-color);
+    color: white;
+    font-size: 25px;
+    font-weight: 700;
+}
+.btn-main:hover{
+    background: transparent;
+    border: 1px solid var(--main-color);
+}
+.action-buttons-container{
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+.couple-intro-container{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.countdown-container {
+    color: var(--gold-color2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding-top: 15px;
+}
+.countdown-container span{
+    color: var(--white-color);
+    font-weight: 600;
+}
+.couples-names{
+    display: block;
+    color: var(--white-color);
+    font-size: 45px;
+    text-align: center;
+    font-weight: 700;
+}
+.updates-overlay{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    position: absolute;
+    z-index: 10;
+    top:0;
+    right:0;
+    bottom: 0;
+    left: 0;
+  width: 100%;
+  height: 100%;  
+    font-size: 30px;
+    /* text-wrap: nowrap; */
+
+
+}
 
 .main-section{
     display:flex;
@@ -69,11 +157,13 @@ body{
     min-width: 100%;
 }
 .desktop-program-container{
+    padding: 20px 38px;
     width: 385px;
     min-width: 385px;
     height: 100%;
     min-height: 100%;
-    background: url("./images/wedding-program.png");
+    background: var(--main-color);
+    background: url("./images/wedding-program.jpg");
     background-repeat: no-repeat; 
     background-position: center;
     background-size: cover;
@@ -86,6 +176,7 @@ body{
     min-height: 100vh;
     min-height: 100%;
     overflow: hidden;
+    position: relative;
     /* border: 1px solid black; */
     /* flex: 1; */
 }
@@ -97,10 +188,13 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    z-index: 10;
+    z-index: 27;
     /* border: 2px solid red; */
     height: 100%;
     width: 80px;
+}
+.hide-program-navigator{
+    display: none;
 }
 .navigator-icon{
     color: var(--white-color);
@@ -131,7 +225,6 @@ body{
 }
 .navigator-arrow span:nth-child(3){
     animation: bounce3 1.5s infinite;
-
 }
 .navigator-text{
     display: block;
@@ -145,13 +238,25 @@ body{
 .navigator-text span{
     color: var(--gold-color2);
 }
+.gifts-container{
+    position: fixed; 
+top:100%;
+left: 0;
+width: 100%;
+height: 0%;
+z-index: 22;
+background: var(--main-color);
+padding: 20px 38px;
+transition: all 0.3s ease;
+/* color: var(--white-color); */
+} 
 .mobile-program-container{
 position: fixed; 
 top:100%;
 left: 0;
 width: 100%;
 height: 0%;
-z-index: 8;
+z-index: 21;
 background: var(--gold-color);
 padding: 20px 38px;
 transition: all 0.3s ease;
@@ -175,7 +280,7 @@ ol li{
 
 /* Animated Hamburger menu starts here */
 
-.hamburger {
+.hamburger,.hamburger2 {
     width: 3.43rem;
     height: 3.43rem;
     background: var(--gold-color);
@@ -192,7 +297,9 @@ ol li{
 }
 
 .hamburger:hover .bars::before,
-.hamburger:hover .bars::after {
+.hamburger:hover .bars::after 
+
+{
     transition: transform 0.3s ease;
 }
 
@@ -234,22 +341,42 @@ ol li{
     transform: translateY(0.5rem);
 }
 
-.crossburger {
+.crossburger,.hamburger2 {
     background: var(--black-color);
 }
 
-.crossburger .bars {
+.crossburger .bars,.hamburger2 .bars {
     background: transparent;
     transform: rotate(180deg);
 }
 
-.crossburger .bars::before {
+.crossburger .bars::before, .hamburger2 .bars::before {
     transform: translateY(0px) rotate(45deg) !important;
 }
 
-.crossburger .bars::after {
+.crossburger .bars::after, .hamburger2 .bars::after {
     transform: translateY(0px) rotate(-45deg) !important;
 
+}
+
+
+.closehamburger{
+    /* border: 3px solid white; */
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    z-index: 33;
+    display: none;
+    gap: 15px;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding-right: 20px;
+    padding-top: 50px;
+}
+.show-closehamburger{
+    display: flex;
 }
 
 /* Swiper implementation starts here */
@@ -302,3 +429,89 @@ ol li{
 width: calc(100vw-385px);
 }
 }
+
+/* Copy Bank details implementation */
+
+
+
+
+ .cards-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-height: 90vh;
+            overflow-y: auto;
+            overflow-x: hidden;
+            width: 100%;
+            /* max-width: 600px; */
+            /* padding: 20px; */
+            /* border: 1px solid #ddd; */
+            border-radius: 8px;
+            /* background-color: #fff; */
+        }
+
+        .card {
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background-color: #fafafa;
+            position: relative;
+        }
+
+        .card h3 {
+            margin: 0 0 10px;
+            font-size: 1.2rem;
+            color: #333;
+        }
+
+        .card pre {
+            margin: 0 0 10px;
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+            font-family: monospace;
+        }
+
+        .copy-btn {
+            display: inline-block;
+            padding: 8px 12px;
+            font-size: 0.9rem;
+            color: #fff;
+            background-color: var(--second-color);
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 7px;
+        }
+
+        .copy-btn:hover {
+            background-color: var(--second-color-dark);
+        }
+
+        .copy-notification {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #28a745;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            display: none;
+        }
+
+        .copy-notification.show {
+            display: block;
+        }
+      .card-header{
+        display: flex;
+        align-items: center;
+      }
+      .card-header .copy-btn{
+        width: 10px; 
+        height: 40px;
+        padding: 3px;
+        margin-right: 10px;
+      }
