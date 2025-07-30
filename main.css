@@ -250,7 +250,7 @@ padding: 20px 38px;
 transition: all 0.3s ease;
 /* color: var(--white-color); */
 } 
-.mobile-program-container{
+.mobile-program-container,.mobile-program-food-menu{
 position: fixed; 
 top:100%;
 left: 0;
