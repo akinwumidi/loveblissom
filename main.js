@@ -8,6 +8,7 @@ let Showlocation = document.querySelector("#location");
 let Giftscontainer = document.querySelector(".gifts-container");
 let giftsMenu = document.querySelector("#gifts");
 let programMenu = document.querySelector(".mobile-program-container");
+let programFoodMenu = document.querySelector(".mobile-program-food-menu");
 
 function toggleVisibility(target) {
     // Hide all containers first
@@ -19,6 +20,9 @@ function toggleVisibility(target) {
         programMenu.classList.add('show-program');
     } else if (target === 'Giftscontainer') {
         Giftscontainer.classList.add('show-program');
+    
+    } else if (target === 'programFoodMenu') {
+        programFoodMenu.classList.add('show-program');
     }
 
     // Toggle navigator and closehamburger visibility
@@ -31,6 +35,7 @@ function toggleVisibility(target) {
 function removeAllAndShowProgram() {
     // Hide both containers and reset UI
     programMenu.classList.remove('show-program');
+    programFoodMenu.classList.remove('show-program');
     Giftscontainer.classList.remove('show-program');
     closehamburger.classList.remove('show-closehamburger');
     navigator.classList.remove('hide-program-navigator');
@@ -39,7 +44,7 @@ function removeAllAndShowProgram() {
 // Event Listeners
 hamburgerdiv.addEventListener("click", () => toggleVisibility('programMenu'));
 hamburger2.addEventListener("click", () => removeAllAndShowProgram());
-Showlocation.addEventListener("click", () => toggleVisibility('programMenu'));
+Showlocation.addEventListener("click", () => toggleVisibility('programFoodMenu'));
 giftsMenu.addEventListener("click", () => toggleVisibility('Giftscontainer'));
 
 // Animated hamburger menu ends here

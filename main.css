@@ -295,6 +295,12 @@ ol li{
 /* transition: all 0.5s ease-in-out; */
   animation: ripple 2s infinite;
 }
+.meal-subtitle{
+    font-weight: 700;
+    font-size: 18px;
+    display: block;
+    margin: 12px 0;
+}
 
 .hamburger:hover .bars::before,
 .hamburger:hover .bars::after 
