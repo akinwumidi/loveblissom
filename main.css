@@ -228,7 +228,7 @@ border: 1px solid var(--gold-color2);
 }
 .navigator-text{
     display: block;
-    transform: rotate(-90deg) translateX(-170px);
+    transform: rotate(-90deg) translateX(-70px);
     text-wrap: nowrap;
     /* transform-origin: top left; */
     /* transform: translateY(-40px); */

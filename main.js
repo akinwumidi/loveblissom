@@ -1,3 +1,31 @@
+// Countdown implementation starts here
+    const targetDate = new Date('August 16, 2025 00:00:00').getTime();
+
+    // Update the countdown every second
+    const interval = setInterval(function() {
+      const now = new Date().getTime();
+      const timeLeft = targetDate - now;
+
+      // Calculate days, hours, minutes, and seconds
+      const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+      // Display the countdown
+      document.getElementById('countdown').innerHTML =`<span>${days}</span> D <span>${hours}</span> H <span>${minutes}</span> M <span>${seconds}</span> S` ;
+
+      // If the countdown reaches zero, stop the interval and display a message
+      if (timeLeft < 0) {
+        clearInterval(interval);
+        document.getElementById('countdown').innerHTML = "";
+      }
+    }, 1000);
+  
+
+// Countdown implementation ends here
+
+
 // Animated hamburger menu starts here
 
 let hamburgerdiv = document.querySelector(".hamburger");
@@ -14,10 +42,14 @@ function toggleVisibility(target) {
     // Hide all containers first
     programMenu.classList.remove('show-program');
     Giftscontainer.classList.remove('show-program');
+        programFoodMenu.classList.remove('show-program');
+
 
     // Show the selected target
     if (target === 'programMenu') {
         programMenu.classList.add('show-program');
+
+
     } else if (target === 'Giftscontainer') {
         Giftscontainer.classList.add('show-program');
     
@@ -66,32 +98,7 @@ var swiper = new Swiper(".mySwiper", {
 
 
 
-// Countdown implementation starts here
-    const targetDate = new Date('August 16, 2025 00:00:00').getTime();
 
-    // Update the countdown every second
-    const interval = setInterval(function() {
-      const now = new Date().getTime();
-      const timeLeft = targetDate - now;
-
-      // Calculate days, hours, minutes, and seconds
-      const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-
-      // Display the countdown
-      document.getElementById('countdown').innerHTML =`<span>${days}</span> D <span>${hours}</span> H <span>${minutes}</span> M <span>${seconds}</span> S` ;
-
-      // If the countdown reaches zero, stop the interval and display a message
-      if (timeLeft < 0) {
-        clearInterval(interval);
-        document.getElementById('countdown').innerHTML = "";
-      }
-    }, 1000);
-  
-
-// Countdown implementation ends here
 
 
 // Payment cards copy implementation starts here
