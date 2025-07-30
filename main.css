@@ -13,15 +13,13 @@ Custard yellow: #fff78
 */
 
 :root{
-    --second-color:#50C878;
-    --second-color-dark:#50C878;
-    --main-color:#8e4585;
-    --plum-color:#dda0dd;
-    --gold-color:#FFD700;
-    --gold-color2:#D4AF37;
+    --gift-btn-color:#50C878;
+    --gift-btn-color-dark:#50C878;
+    --main-color: #50C878;
+    --main-color-dark: #c4402b;
     --white-color:#fff;
     --black-color:#000;
---box-shadow: rgb(0 0 0 / 16%) 0px 2px 8px;
+    --box-shadow: rgb(0 0 0 / 16%) 0px 2px 8px;
 }
 @keyframes bounce1 {
     0%, 100% {
@@ -53,7 +51,7 @@ Custard yellow: #fff78
 
 @keyframes ripple {
   0% {
-    box-shadow: 0 0 0 0 var(--gold-color), 0 0 0 0 var(--gold-color);
+    box-shadow: 0 0 0 0 var(--main-color), 0 0 0 0 var(--main-color);
   }
 
   80% {
@@ -61,7 +59,7 @@ Custard yellow: #fff78
   }
 
   100% {
-    box-shadow: 0 0 0 20 var(--gold-color), 0 0 0 40 var(--gold-color);
+    box-shadow: 0 0 0 20 var(--main-color), 0 0 0 40 var(--main-color);
   }
 }
 body{
@@ -78,18 +76,18 @@ body{
     border-radius: 10px;
 }
 .btn-gold{
-    background: var(--gold-color2);
-    color: white;
+    background: var(--main-color-dark);
+    color: var(--white-color);
     font-size: 25px;
     font-weight: 700;
 }
 .btn-gold:hover{
 background: transparent;
-border: 1px solid var(--gold-color2);
+border: 1px solid var(--main-color-dark);
 }
 .btn-main{
     background: var(--main-color);
-    color: white;
+    color: var(--white-color);
     font-size: 25px;
     font-weight: 700;
 }
@@ -112,7 +110,7 @@ border: 1px solid var(--gold-color2);
 }
 
 .countdown-container {
-    color: var(--gold-color2);
+    color: var(--main-color-dark);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -211,15 +209,15 @@ border: 1px solid var(--gold-color2);
     flex-direction: column;
     /* border: 2px solid tomato; */
     transition: all 0.3s ease;
-    transform: translateY(22px);
+    transform: translateY(20px);
 }
 
 .navigator-arrow span:nth-child(1){
-    transform: translateY(22px);
+    transform: translateY(20px);
     animation: bounce1 1.5s infinite;
 }
 .navigator-arrow span:nth-child(2){
-    color: var(--gold-color);
+    color: var(--main-color);
     animation: bounce2 1.5s infinite;
     animation-delay: 0.1s;
 }
@@ -236,7 +234,7 @@ border: 1px solid var(--gold-color2);
     font-weight: 700;
 }
 .navigator-text span{
-    color: var(--gold-color2);
+    color: var(--main-color-dark);
 }
 .gifts-container{
     position: fixed; 
@@ -257,7 +255,7 @@ left: 0;
 width: 100%;
 height: 0%;
 z-index: 21;
-background: var(--gold-color);
+background: var(--main-color);
 padding: 20px 38px;
 transition: all 0.3s ease;
 /* transition: all 0.4s 0.65s cubic-bezier(0, 0.88, 0.4, 0.93); */
@@ -283,7 +281,7 @@ ol li{
 .hamburger,.hamburger2 {
     width: 3.43rem;
     height: 3.43rem;
-    background: var(--gold-color);
+    background: var(--main-color);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -485,7 +483,7 @@ width: calc(100vw-385px);
             padding: 8px 12px;
             font-size: 0.9rem;
             color: #fff;
-            background-color: var(--second-color);
+            background-color: var(--gift-btn-color);
             border: none;
             border-radius: 4px;
             cursor: pointer;
@@ -493,7 +491,7 @@ width: calc(100vw-385px);
         }
 
         .copy-btn:hover {
-            background-color: var(--second-color-dark);
+            background-color: var(--gift-btn-color-dark);
         }
 
         .copy-notification {

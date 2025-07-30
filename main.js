@@ -59,7 +59,7 @@ function toggleVisibility(target) {
 
     // Toggle navigator and closehamburger visibility
     const isVisible = programMenu.classList.contains('show-program') || 
-                      Giftscontainer.classList.contains('show-program');
+                      Giftscontainer.classList.contains('show-program')||programFoodMenu.classList.contains('show-program');
     closehamburger.classList.toggle('show-closehamburger', isVisible);
     navigator.classList.toggle('hide-program-navigator', isVisible);
 }
